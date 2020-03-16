@@ -37,6 +37,7 @@ pub const ALL_MODULES: &[&str] = &[
     "nix_shell",
     "nodejs",
     "package",
+    "punch_clock",
     "python",
     "ruby",
     "crystal",

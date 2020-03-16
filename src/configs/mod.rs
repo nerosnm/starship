@@ -25,6 +25,7 @@ pub mod nix_shell;
 pub mod nodejs;
 pub mod package;
 pub mod php;
+pub mod punch_clock;
 pub mod python;
 pub mod ruby;
 pub mod rust;

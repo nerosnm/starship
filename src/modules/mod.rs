@@ -26,6 +26,7 @@ mod nix_shell;
 mod nodejs;
 mod package;
 mod php;
+mod punch_clock;
 mod python;
 mod ruby;
 mod rust;
@@ -74,6 +75,7 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
         "nodejs" => nodejs::module(context),
         "package" => package::module(context),
         "php" => php::module(context),
+        "punch_clock" => punch_clock::module(context),
         "python" => python::module(context),
         "ruby" => ruby::module(context),
         "rust" => rust::module(context),
@@ -117,6 +119,7 @@ pub fn description(module: &str) -> &'static str {
         "nodejs" => "The currently installed version of NodeJS",
         "package" => "The package version of the current directory's project",
         "php" => "The currently installed version of PHP",
+        "punch_clock" => "The start of the current punch-clock time-tracking period",
         "python" => "The currently installed version of Python",
         "ruby" => "The currently installed version of Ruby",
         "rust" => "The currently installed version of Rust",

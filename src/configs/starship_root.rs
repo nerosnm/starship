@@ -48,6 +48,7 @@ impl<'a> RootModuleConfig<'a> for StarshipRootConfig<'a> {
                 "memory_usage",
                 "aws",
                 "env_var",
+                "punch_clock",
                 "cmd_duration",
                 "line_break",
                 "jobs",
