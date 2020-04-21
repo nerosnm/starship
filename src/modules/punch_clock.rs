@@ -1,3 +1,4 @@
+use chrono::{DateTime, Local};
 use punch_clock::{sheet::SheetStatus, Sheet};
 
 use super::{Context, Module, RootModuleConfig, SegmentConfig};
@@ -17,7 +18,9 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     module.set_style(config.style);
     module.get_prefix().set_value(PC_PREFIX);
 
-    if let SheetStatus::PunchedIn(start) = Sheet::load_default().ok()?.status() {
+    if let SheetStatus::PunchedIn(start_utc) = Sheet::load_default().ok()?.status() {
+        let start: DateTime<Local> = start_utc.into();
+
         module.create_segment("symbol", &config.symbol);
         module.create_segment(
             "status",
